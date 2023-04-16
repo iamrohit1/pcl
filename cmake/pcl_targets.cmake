@@ -182,6 +182,11 @@ function(PCL_ADD_LIBRARY _name)
   set(options)
   set(oneValueArgs COMPONENT)
   set(multiValueArgs SOURCES)
+  target_link_libraries(
+                      ${Boost_PROGRAM_OPTIONS_LIBRARIES}
+                      ${Boost_FILESYSTEM_LIBRARIES}
+                      ${Boost_SYSTEM_LIBRARIES}
+                      )
   cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
   if(ARGS_UNPARSED_ARGUMENTS)
